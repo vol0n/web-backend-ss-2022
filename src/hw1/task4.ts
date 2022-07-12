@@ -4,12 +4,12 @@
  */
 
 function* iterator(alphabet: string, permLen: number): Generator<string, void, void> {
-    const a = [...alphabet].sort()
-    const perm = Array(permLen).fill(0)
-    const was = Array(alphabet.length).fill(false)
+    const a: string[] = [...alphabet].sort()
+    const perm: number[] = Array(permLen)
+    const was: boolean[] = Array(alphabet.length).fill(false)
 
     function* find(i: number) {
-        if (i == permLen) {
+        if (i === permLen) {
             yield perm.map(idx => a[idx]).join('')
             return;
         }

@@ -20,9 +20,9 @@ export function solve1(arr: number[]): number {
 // sorting array in-place and using nlogn time
 export function solve2(arr: number[]): number {
     arr.sort()
-    for (let i = 0; i < arr.length - 1; i++) {
+    for (let i = 0; i < arr.length - 1; i += 2) {
         if (arr[i] !== arr[i + 1])
-            return (i == 0 || arr[i - 1] !== arr[i]) ? arr[i] : arr[i + 1]
+            return arr[i]
     }
 }
 
